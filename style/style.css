@@ -1,0 +1,175 @@
+.supermobleads_section {
+    position: fixed;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    font-family: inherit;
+}
+.supermobleads_row {
+    display: flex;
+    text-align: center;
+}
+.supermobleads_colomn {
+    flex-grow: 1;
+    padding: 10px;
+}
+.supermobleads_colomn a {
+    color: #fff;
+    text-decoration: none;
+}
+.supermobleads_phone {
+    background-color: orange;
+}
+.supermobleads_whatsapp {
+    background-color: green;
+}
+.supermobleads_messenger {
+    background-color: #000;
+}
+@media only screen and (min-width: 767px) {
+    .supermobleads_circle_wrapper,
+    .supermobleads_section {
+        display: none;
+    }
+    .supermobleads_display_desktop_class {
+        display: block;
+    }
+}
+.supermobleads_circle_wrapper {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+}
+.supermobleads_checkbox {
+    display: none;
+}
+.supermobleads_circle {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    width: 4rem;
+    height: 4rem;
+    background: #00f;
+    border-radius: 50%;
+    background: #126ee2;
+    transition: all 0.3s ease;
+    z-index: 1;
+    border-bottom-right-radius: 6px;
+    border: 1px solid #0c50a7;
+}
+.supermobleads_circle:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.supermobleads_checkbox:checked ~ .supermobleads_circle:before {
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 5%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.supermobleads_circle:hover {
+    background: #2c87e8;
+}
+.supermobleads_circle_dots {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateX(0) translateY(-50%) rotate(0);
+    opacity: 1;
+    animation: blink 3s ease infinite;
+    transition: all 0.3s ease;
+}
+.supermobleads_circle_dots-1 {
+    left: 15px;
+    animation-delay: 0s;
+}
+.supermobleads_circle_dots-2 {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation-delay: 0.4s;
+}
+.supermobleads_circle_dots-3 {
+    right: 15px;
+    animation-delay: 0.8s;
+}
+.supermobleads_checkbox:checked ~ .supermobleads_circle .supermobleads_circle_dots {
+    height: 6px;
+}
+.supermobleads_circle .supermobleads_circle_dots-2 {
+    transform: translateX(-50%) translateY(-50%) rotate(0);
+}
+.supermobleads_checkbox:checked ~ .supermobleads_circle .supermobleads_circle_dots-1 {
+    width: 32px;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.supermobleads_checkbox:checked ~ .supermobleads_circle .supermobleads_circle_dots-3 {
+    width: 32px;
+    border-radius: 10px;
+    right: 50%;
+    transform: translateX(50%) translateY(-50%) rotate(-45deg);
+}
+@keyframes blink {
+    50% {
+        opacity: 0.25;
+    }
+}
+.supermobleads_checkbox:checked ~ .supermobleads_circle .supermobleads_circle_dots {
+    animation: none;
+}
+.supermobleads_circle_wheel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10rem;
+    height: 10rem;
+    transition: all 0.3s ease;
+    transform-origin: bottom right;
+    transform: scale(0);
+}
+.supermobleads_checkbox:checked ~ .supermobleads_circle_wheel {
+    transform: scale(1);
+}
+.supermobleads_circle_action {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 0.1rem 1rem rgba(24, 66, 154, 0.82);
+    transition: all 1s ease;
+    opacity: 0;
+}
+.supermobleads_checkbox:checked ~ .supermobleads_circle_wheel .supermobleads_circle_action {
+    opacity: 1;
+}
+.supermobleads_circle_wheel .supermobleads_circle_action-1 {
+    right: -1rem;
+    top: 0;
+}
+.supermobleads_circle_wheel .supermobleads_circle_action-2 {
+    right: 3.4rem;
+    top: 0.5rem;
+}
+.supermobleads_circle_wheel .supermobleads_circle_action-3 {
+    left: 0.5rem;
+    bottom: 3.4rem;
+}
+.supermobleads_circle_wheel .supermobleads_circle_action-4 {
+    left: 0;
+    bottom: -1rem;
+}
